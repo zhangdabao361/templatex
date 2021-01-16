@@ -1,115 +1,122 @@
 %=================================================================
 \section{Introduction}\label{sec-intro}
 
+\text
+    Picture yourself strolling through your local, open-air market... What do you see? What do you smell? What will you make for dinner tonight?
+    If you're in Northern California, you'll be walking past the inevitable bushels of leafy greens, spiked with dark purple kale and the bright pinks and yellows of chard. Across the world in South Korea, mounds of bright red kimchi greet you, while the smell of the sea draws your attention to squids squirming nearby. 
+    India’s market is perhaps the most colorful, awash in the rich hues and aromas of dozens of spices: turmeric, star anise, poppy seeds, and garam masala as far as the eye can see.
+    The subject requirements are asks to predict the category of a dish's cuisine given a list of its ingredients.\\
+    In the dataset, we include the recipe id, the type of cuisine, and the list of ingredients of each recipe (of variable length). The data is stored in JSON format. \\
+    
 
-\todo{The importance of the area}
-\blindtext
-
-
-\todo{The problems faced by most current methods}
-\blindtext
-
-\todo{What can be addressed by existing methods; Why those problems are challenges to existing methods?}
-\blindtext
-
-\todo{What provides the motivation of this work? What are the research issues? What is the rationale of this work? }
-\blindtext
-
-\todo{What we have done and what are the contributions.}
-\blindtext
-
-
-
-Test citation~\cite{BL12J01}. 
-\begin{JournalOnly}
-and~\citep{BJL11J01} or~\citet{BJL11J01}.
-\end{JournalOnly}
-
-This is for~\cref{tbl:overall-experiments}, 
-\todo[fancyline]{Testing.}
-and this is for~\cref{sec-conclusions}.
-\todo[noline]{A note with no line back to the text.}%
-\gangli{This is comment from Gang.}
-\qwu{Response from QW}
-
-Number:
-\num{123}.
-\numlist{10;30;50;70},
-\numrange{10}{30},
-\SIlist{10;30;45}{\metre},
-and
-\SI{10}{\percent}
-
-\missingfigure[figcolor=white]{Testing figcolor}
+    \vspace{.5cm}
+  	\begin{tabular}{ c | c | c }
+      \toprule
+      Name & Description & Attribute      \\
+      \midrule
+      train.json & training set(the type of cuisine, and & Data: id, cuisine,\\     
+                 & the list of ingredients of each recipe) & ingredients\\
+     \midrule
+       test.json & Test set(predict the cuisine type & Data:id,ingredients     \\
+                 & of the list ingredients) &     \\
+      % sample_submission.csv & a sample submission file & Data:id,cuisine    \\
+      \midrule
+      sample.csv & a sample submission file & Data:id,ingredients     \\
+       \bottomrule
+  \end{tabular}
 
 
-\begin{ConferenceOnly}
-We have \SI{10}{\hertz},
-\si{\kilogram\metre\per\second},
-the range: \SIrange{10}{100}{\hertz}.
-$\nicefrac[]{1}{2}$.
+\section{Data Analysis} \label{sec-conclusions}
 
-\missingfigure{Make a sketch of the structure of a trebuchet.}
+\begin{itemize}
+  \item
+  There are 39774 data in the training set.\\
+  There are 9944 data in the test set.\\   
 
-\end{ConferenceOnly}
+  \item
+  Data is imported as DataFrame object, each recipe is a separate line.\\  
+  \item  There are no missing values in the training set.\\
+  \item The following results are obtained by sorting and sorting the data of ingredients:
 
-
-For~\cref{eq:test},
-as shown below:
-
-\begin{equation}\label{eq:test}
-a = b \times \sqrt{ab}
-\end{equation}
-
-\blindmathpaper
-
-\section{Preliminaries} \label{sec-preliminaries}
-
-\blindtext
-
-\gliMarker  %TODO: GLi Here
-
-
-\section{Method} \label{sec-method}
-
-\blindtext
-\blindlist{itemize}[3]
-\blinditemize
-\blindenumerate
-
-\blindmathtrue
-\blindmathfalse
-\blinddescription
-
-\qwuMarker %TODO: QWu Here
-
-\section{Experiment and Analysis} \label{sec-experiment}
-
-
-\begin{table}  \centering
-  \caption{Precision Comparison on Event Detection Methods}
-  \label{tbl:overall-experiments}
-  \begin{tabular}{cccc}
-\toprule
-    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-    & OR Event Detection & AC Event Detection & TC Event Detection \\
-\midrule
-    precision & 0.83 & 0.69 & 0.46 \\
-    recall & 0.68 & 0.48 & 0.36 \\
-    F-score & 0.747 & 0.57 & 0.4 \\
-\bottomrule
+\end{itemize}
+\begin{center}
+\vspace{.5cm}
+  \begin{tabular}{ c | c }
+    \toprule
+    id & cuisine      \\
+    \midrule
+    salt & 18049  \\
+  %  \midrule
+   onions	& 797 \\
+    % \midrule
+    olive oil	& 7972 \\
+    water	& 7457\\
+    garlic	& 7380\\
+     \bottomrule
 \end{tabular}
-\end{table}
+\end{center}
+\text
+From here we can see that in the dishes in the training set, 
+salt, water, oil and other ingredients are used more, which 
+is not very useful for our future learning.
+
+\section{Data Description and Processing} \label{sec-conclusions}
+\text
+We can find the percentage of each country’s dishes in the total test set.
+We can find the percentage of each country’s dishes in the total test set. 
+At this point, we will find that in the test set, Italian dishes account for 
+the largest percentage, more tahn Nineteen percent in the training set, 
+followed by Mexican dishes, which more than sixteen percent in the training set, 
+and the following order is: \\
+Itian, Indian,Chinese, French,Cajun creole, thai, 
+japanese, greek, spanish, korean, vietnamese, moroccan,british,fillplno, ifish, jamaican,
+russian, brazilian.\\
+We can find the ingredients that account for the most ingredients in each country’s dishes:\\
+
+\begin{minipage}{1\linewidth}
+  \centering
+  \includegraphics[width=1\textwidth]{C:/Users/lenovo/Desktop/01/slides/Figure/Figure_3.JPG} 
+\end{minipage}
+\text
+In the same way, we can find the 25 
+cooking ingredients or cooking essences with the least amount of each dish.\\
 
 
-\section{Conclusions} \label{sec-conclusions}
+\text
+In the data processing stage, we first need to process the text data. 
+Since the initial data type we get is dataFrame type data, we first 
+need to process the data and convert the original list type data to string type.\\
+After the data is converted, we need to use TF-IDF to calculate the degree of 
+    similarity between each ingredient and the dish, on this basis, we can find 
+    dishes with more similarities:
+    \begin{minipage}{1\linewidth}
+      \centering
+      \includegraphics[width=0.6\textwidth]{C:/Users/lenovo/Desktop/01/slides/Figure/Figure_2.JPG} 
+    \end{minipage}
 
-\blindtext
+\text
+Next, we can use Linear SVC to predict the dishes:
+  For the first modeling synthesis, its best params are'C': 1,'loss':'hinge','penalty':'l2'\\
+  The best result we can get at this time is 0.7857646647354912.
 
-\section*{Acknowledgment}
+  % \section{Data Analysis} \label{sec-conclusions}
+  \section*{Conclusion}
 
-\lipsum[1]
+  In this practice, I learned how to process text-related materials. 
+  When processing text, it is roughly divided into the following steps: 
+  1. Text preprocessing; 2. Text representation; 3. Spatial dimensionality reduction; 
+  4. Classification model training; 5. Classification performance evaluation. \\
+  In the above steps, I still have deficiencies in the two aspects of spatial 
+  dimensionality reduction and classification performance evaluation. 
+  In the subsequent learning, I will pay attention to strengthening the learning 
+  of these two aspects.In addition, in the process of processing the data, I also 
+  tried to use the bag of words model, and here is a word cloud, which is a very interesting attempt.\\
+  
+  In general, I have learned a lot during this practice, but there are also many shortcomings, 
+  which need to be filled in the next time.
+
+% \lipsum[1]
 
 
-The authors would like to thank \ldots
+% The authors would like to thank \ldots
 
